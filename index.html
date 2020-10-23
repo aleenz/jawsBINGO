@@ -15,12 +15,15 @@
             background-size: 50%;
         }
     .cross{
-        background-color: lightseagreen;
+        background-color: rgba(32, 178, 170,0.95);
     }
     #card{
-        background-color: white;
         width:max-content;
         
+    }
+
+    td{
+        background-color:rgba(255,255,255,0.95);
     }
 
    
@@ -69,7 +72,6 @@ var prompts = ['says other twitch emote out loud',
   'doesn\'t show fish even though redeemed',
   'I said pog to a girl the other day...',
   'x do be kinda y doe',
-  'YEP',
   'avoids teammate',
   'reads a pasta and says it\'s bad',
   'Sadge...',
@@ -93,8 +95,8 @@ var chooser = randomNoRepeats(prompts);
     for(var r = 0; r < rows; r++){
         str += "<tr style=''>";
         for(var c = 0; c < columns; c++){
-            if(c == 2 && r == 2) str += '<td style="width:'+size+'px;border:1px solid black; height:'+size+'px;text-align:center;font-size:12px" class="td" id="cell_'+r+'_'+c+'" ><img src ="https://pbs.twimg.com/media/EV23AEjUEAAPrHE.jpg" style="width:'+(size-10)+'px; height:'+(size-10)+'px"></td>';
-            else str += "<td style='width:"+size+"px;border:1px solid black; height:"+size+"px;text-align:center;font-size:12px' class='td' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
+            if(c == 2 && r == 2) str += '<td style="width:'+size+'px; height:'+size+'px;text-align:center;font-size:12px" class="td" id="cell_'+r+'_'+c+'" ><img src ="https://pbs.twimg.com/media/EV23AEjUEAAPrHE.jpg" style="width:'+(size-10)+'px; height:'+(size-10)+'px"></td>';
+            else str += "<td style='width:"+size+"px;border:2px dotted   grey; height:"+size+"px;text-align:center;font-size:12px' class='td' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
         }
         str += "</tr>";
     }
