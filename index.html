@@ -8,7 +8,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script></head>
 <body>
-    
+    <style>.cross{
+        background-color: red;
+    }</style>
     <table id="table" style=""></table>
 </body>
 
@@ -74,7 +76,7 @@ var chooser = randomNoRepeats(prompts);
 
 
     $(".td").click(function(){
-        alert($(this).html());
+        $(this).toggleClass("cross")
     });
 
     
