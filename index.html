@@ -36,7 +36,15 @@
     var str="";
 
     var height = $(window).height();
-    var size = (height / rows)-10;
+    var width = $(window).width();
+
+    var size = 0;
+    if(height > widht){
+        size = (widht / rows)-10;
+    }else{
+        size = (height / rows)-10;
+    }
+    
 
     function randomNoRepeats(array) {
   var copy = array.slice(0);
