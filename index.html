@@ -8,10 +8,24 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script></head>
 <body>
-    <style>.cross{
-        background-color: red;
-    }</style>
-    <table id="table" style=""></table>
+    <style>
+        body{
+            margin:0;
+            background-image: url("https://st2.depositphotos.com/1400128/11303/v/950/depositphotos_113037580-stock-illustration-seamless-pattern-with-flock-of.jpg");
+            background-size: 50%;
+        }
+    .cross{
+        background-color: lightseagreen;
+    }
+    #card{
+        background-color: white;
+        width:max-content;
+        
+    }
+
+   
+    </style>
+    <center><div id="card"><table id="table" style=""></table></div></center> 
 </body>
 
 
@@ -20,6 +34,9 @@
     var rows = 5;
     var columns = 5;
     var str="";
+
+    var height = $(window).height();
+    var size = (height / rows)-10;
 
     function randomNoRepeats(array) {
   var copy = array.slice(0);
@@ -51,23 +68,25 @@ var prompts = ['says other twitch emote out loud',
   'voice cracks',
   'at some point',
   'complains about NA queue',
-  'reads a oasta abd says it\'s good',
+  'reads a pasta and says it\'s good',
   'this is actually a catJAM',
   'wrong scene in OBS',
   'nononono chat i\'ll DEFINITELY stream later',
   'get me out of this GAME',
   'DonoWalls chat',
-  'Bully Aleenz ',
+  'Bully Aleenz',
   '"Hades is a god gamer"',
   '"Poggers"',
+  'OH NO NO NO PepeLaugh'
   ];
 
 var chooser = randomNoRepeats(prompts);
 
-    for(var r = 0; r < columns; r++){
+    for(var r = 0; r < rows; r++){
         str += "<tr style=''>";
         for(var c = 0; c < columns; c++){
-            str += "<td style='width:150px;border:1px solid black; height:150px;text-align:center;font-size:12px' class='td' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
+            if(c == 2 && r == 2) str += '<td style="width:'+size+'px;border:1px solid black; height:'+size+'px;text-align:center;font-size:12px" class="td" id="cell_'+r+'_'+c+'" ><img src ="https://pbs.twimg.com/media/EV23AEjUEAAPrHE.jpg" style="width:'+(size-10)+'px; height:'+(size-10)+'px"></td>';
+            else str += "<td style='width:"+size+"px;border:1px solid black; height:"+size+"px;text-align:center;font-size:12px' class='td' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
         }
         str += "</tr>";
     }
