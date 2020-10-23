@@ -65,7 +65,7 @@ var chooser = randomNoRepeats(prompts);
     for(var r = 0; r < columns; r++){
         str += "<tr style=''>";
         for(var c = 0; c < columns; c++){
-            str += "<td style='width:150px;border:1px solid black; height:150px;text-align:center;font-size:12px' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
+            str += "<td style='width:150px;border:1px solid black; height:150px;text-align:center;font-size:12px' class='td' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
         }
         str += "</tr>";
     }
@@ -73,8 +73,9 @@ var chooser = randomNoRepeats(prompts);
     $("#table").html(str);
 
 
-
-    var a = ["Roger", "Russell", "Clyde", "Egbert", "Clare", "Bobbie", "Simon", "Elizabeth", "Ted", "Caroline"];
+    $(".td").click(function(){
+        alert($(this).html());
+    });
 
     
 </script>
