@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>test</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script></head>
+<body>
+    
+    <table id="table" style=""></table>
+</body>
+
+
+<script>
+    
+    var rows = 5;
+    var columns = 5;
+    var str="";
+
+    function randomNoRepeats(array) {
+  var copy = array.slice(0);
+  return function() {
+    if (copy.length < 1) { copy = array.slice(0); }
+    var index = Math.floor(Math.random() * copy.length);
+    var item = copy[index];
+    copy.splice(index, 1);
+    return item;
+  };
+}
+
+var prompts = ['says other twitch emote out loud',
+ 'BRUHHH',
+  'stream tomorrow!',
+  'talks to chat from far away',
+  'reading comprehension',
+  'unintentionally sadboy baits for compliments on his appearance and you as a pathetic jaws simp are trying to resist the bait',
+  'BROOOOO',
+  'and after I\'ll stream later',
+  'peaks mic in comms',
+  'doesn\'t show fish even though redeemed',
+  'I said pog to a girl the other day...',
+  'x do be kinda y doe',
+  'YEP',
+  'avoids teammate',
+  'reads a pasta and says it\'s bad',
+  'Sadge...',
+  'voice cracks',
+  'at some point',
+  'complains about NA queue',
+  'reads a oasta abd says it\'s good',
+  'this is actually a catJAM',
+  'wrong scene in OBS',
+  'nononono chat i\'ll DEFINITELY stream later',
+  'get me out of this GAME',
+  'DonoWalls chat',
+  'Bully Aleenz',
+  '"Hades is a god gamer"',
+  '"Poggers"',
+  ];
+
+var chooser = randomNoRepeats(prompts);
+
+    for(var r = 0; r < columns; r++){
+        str += "<tr style=''>";
+        for(var c = 0; c < columns; c++){
+            str += "<td style='width:150px;border:1px solid black; height:150px;text-align:center;font-size:12px' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
+        }
+        str += "</tr>";
+    }
+
+    $("#table").html(str);
+
+
+
+    var a = ["Roger", "Russell", "Clyde", "Egbert", "Clare", "Bobbie", "Simon", "Elizabeth", "Ted", "Caroline"];
+
+    
+</script>
+</html>
