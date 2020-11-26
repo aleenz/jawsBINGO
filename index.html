@@ -24,7 +24,6 @@
 
     td{
         background-color:rgba(255,255,255,0.95);
-        cursor: pointer;
     }
 
     #imgjaws{
@@ -40,20 +39,10 @@ z-index: -3;
 
     }
 
-    #byAleenz{
-        position:fixed;
-        bottom:0;
-        right: 500px;
-        background-color:  rgba(32, 178, 170,0.95);
-        color:white;
-        padding: 10px;
-    }
-
    
     </style>
-    <center><div id="card"><table id="table" style=""></table></div></center> <hr>
+    <center><div id="card"><table id="table" style=""></table></div></center> 
     <div id="imgjaws"> </div>
-    <div id="byAleenz">Aleenz#0655</div>
 </body>
 
 
@@ -112,19 +101,8 @@ var prompts = ['says other twitch emote out loud',
   'Bully Aleenz',
   '"Hades is a god gamer"',
   '"Poggers"',
-  '"ELITE"',
-  '"CHAT IM CRAZY / INSANE"',
-  '"Are you the OWL caster?"',
-  '"Are you australian?"',
-  'JAWS MUTE',
   'OH NO NO NO PepeLaugh',
-  '"My BRAIN HURTS"',
-  '"WHOO LET\'S GO BABY"',
-  '"My x is C-RACKED!"' ,
-  'Compliments teammates after successful pushes',
-   '"It\'s winnable!"',
-   '"Watch. This."',
-   'Shows optimism in a dire situation'
+  'Mr. Streamer complains about mercy / damage boost'
   ];
 
 var chooser = randomNoRepeats(prompts);
@@ -132,7 +110,7 @@ var chooser = randomNoRepeats(prompts);
     for(var r = 0; r < rows; r++){
         str += "<tr style=''>";
         for(var c = 0; c < columns; c++){
-            if(c == 2 && r == 2) str += '<td style="width:'+size+'px; height:'+size+'px;text-align:center;font-size:12px" class="td" id="cell_'+r+'_'+c+'" ><img src ="https://cdn.discordapp.com/attachments/574068723481051166/769336840674738207/YEP.png" style="width:'+(size-10)+'px; height:'+(size-10)+'px"></td>';
+            if(c == 2 && r == 2) str += '<td style="width:'+size+'px; height:'+size+'px;text-align:center;font-size:12px" class="td" id="cell_'+r+'_'+c+'" ><img src ="https://pbs.twimg.com/media/EV23AEjUEAAPrHE.jpg" style="width:'+(size-10)+'px; height:'+(size-10)+'px"></td>';
             else str += "<td style='width:"+size+"px;border:2px dotted   grey; height:"+size+"px;text-align:center;font-size:12px' class='td' id='cell_"+r+"_"+c+"'>"+chooser()+"</td>";
         }
         str += "</tr>";
